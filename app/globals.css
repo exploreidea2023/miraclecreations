@@ -120,3 +120,49 @@ body {
 .heroWord {
   opacity: 0;
 }
+/* ===== Wonjyou style marquee base ===== */
+.marqueeSection {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  overflow: hidden;
+}
+
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marqueeWrapper {
+  transform: rotate(-5deg);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 24px 0;
+}
+
+.marqueeImages {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  will-change: transform;
+}
+
+.mImg {
+  width: 180px;
+  height: 240px;
+  flex: 0 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #111;
+}
+
+.mImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
