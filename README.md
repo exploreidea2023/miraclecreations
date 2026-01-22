@@ -1,10 +1,10 @@
 # miraclecreations
 
-Company website
+Company website (Next.js + GSAP)
 
 ## Getting Started
 
-First, install dependencies:
+Install dependencies:
 
 ```bash
 npm install
