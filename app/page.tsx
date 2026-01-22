@@ -1,63 +1,90 @@
 "use client";
 
+import Image from "next/image";
 import IntroMarquee from "./components/IntroMarquee";
 
 export default function Home() {
   return (
     <main className="bg-black text-white">
-      {/* ===== WONJYOU STYLE LANDING ===== */}
+      {/* ===== WONJYOU-STYLE LANDING ===== */}
       <section className="relative h-screen overflow-hidden">
-        {/* Top Bar */}
-        <header className="absolute top-0 left-0 w-full z-10 px-10 py-8 flex items-start justify-between">
-          {/* Left Nav */}
-          <nav className="text-[11px] tracking-[0.28em] uppercase text-white/70 space-y-3">
-            <p className="text-white/40">I. Intro</p>
-            <p className="hover:text-white transition">II. Mentorship</p>
-            <p className="hover:text-white transition">III. About</p>
-            <p className="hover:text-white transition">IV. Work</p>
-            <p className="hover:text-white transition">V. Contact</p>
-          </nav>
+        {/* LEFT VERTICAL MENU */}
+        <aside className="absolute top-0 left-0 h-full w-[72px] border-r border-white/10 flex flex-col items-center justify-between py-6 z-20">
+          <div className="flex flex-col items-center gap-5 opacity-70">
+            <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[12px]">
+              M
+            </div>
 
-          {/* Right CTA */}
-          <div className="text-[11px] tracking-[0.28em] uppercase text-white/70 hover:text-white transition cursor-pointer">
-            LET’S CONNECT
+            <div className="flex flex-col gap-6 text-[11px] tracking-[0.32em] uppercase">
+              <span className="rotate-90 origin-left text-white/40">
+                I Intro
+              </span>
+              <span className="rotate-90 origin-left text-white/60">
+                II Work
+              </span>
+              <span className="rotate-90 origin-left text-white/60">
+                III About
+              </span>
+              <span className="rotate-90 origin-left text-white/60">
+                IV Contact
+              </span>
+            </div>
           </div>
-        </header>
 
-        {/* Center Content */}
-        <div className="h-full flex items-center justify-center px-6">
-          <div className="text-center max-w-4xl">
-            <p className="text-[11px] tracking-[0.35em] uppercase text-white/60">
-              Miracle Creations Studio
-            </p>
+          {/* CONNECT BUTTON */}
+          <button className="bg-[#f1b34a] text-black text-[11px] tracking-[0.28em] uppercase px-4 py-3 rotate-90 origin-bottom-left">
+            Let’s Connect →
+          </button>
+        </aside>
 
-            <h1 className="mt-6 text-[44px] md:text-[64px] leading-[1.05] font-medium tracking-[-0.02em]">
-              Same passion. <br className="hidden md:block" /> New mission.
-            </h1>
+        {/* MAIN CONTENT */}
+        <div className="h-full w-full pl-[72px] flex">
+          {/* TEXT SIDE */}
+          <div className="flex-1 flex items-center">
+            <div className="px-10 w-full">
+              <p className="text-[14px] text-white/80 mb-10 max-w-[200px] leading-[1.3]">
+                Creative studio <br />
+                by Miracle Creations
+              </p>
 
-            <p className="mt-8 text-[12px] tracking-[0.28em] uppercase text-white/50">
-              Branding • Design • Development • Creative Direction
-            </p>
+              <div className="font-bold leading-[0.9] tracking-[-0.03em]">
+                <h1 className="text-[90px] md:text-[120px] text-[#ff4d3d]">
+                  EDUCATOR
+                </h1>
+                <h1 className="text-[90px] md:text-[120px] text-[#ff4d3d]">
+                  COACH
+                </h1>
+                <h1 className="text-[90px] md:text-[120px] text-[#ff4d3d]">
+                  MENTOR
+                </h1>
+                <h1 className="text-[90px] md:text-[120px] text-[#ff4d3d]">
+                  CONSULTANT
+                </h1>
+              </div>
+
+              {/* SCROLL INDICATOR */}
+              <div className="absolute bottom-10 left-[110px] flex items-center gap-4 text-[12px] tracking-[0.22em] uppercase text-white/70">
+                <span>Scroll to discover</span>
+                <span className="w-12 h-px bg-white/25" />
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Bottom Left */}
-        <div className="absolute bottom-10 left-10 z-10 text-[11px] tracking-[0.28em] uppercase text-white/70">
-          <span className="hover:text-white transition cursor-pointer">
-            watch intro
-          </span>
-        </div>
-
-        {/* Bottom Right */}
-        <div className="absolute bottom-10 right-10 z-10 flex items-center gap-4">
-          <span className="text-[11px] tracking-[0.28em] uppercase text-white/60">
-            Scroll to discover
-          </span>
-          <span className="w-12 h-px bg-white/20" />
+          {/* IMAGE SIDE */}
+          <div className="relative w-[42%] h-full">
+            <Image
+              src="/hero/portrait.jpg"
+              alt="portrait"
+              fill
+              priority
+              className="object-cover opacity-80 grayscale"
+            />
+            <div className="absolute inset-0 bg-black/40" />
+          </div>
         </div>
       </section>
 
-      {/* ===== MARQUEE / ANIMATION SECTION ===== */}
+      {/* ===== NEXT SECTION (Marquee) ===== */}
       <IntroMarquee onDone={() => {}} />
     </main>
   );
