@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+/* Intro Overlay */
+.introWrap {
+  position: fixed;
+  inset: 0;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.marquee {
+  white-space: nowrap;
+  font-size: 64px;
+  font-weight: 700;
+  display: inline-flex;
+  gap: 60px;
+  padding-left: 100vw;
+  letter-spacing: -1px;
+}
+
+/* Main Page */
+.mainPage {
+  padding: 70px 50px;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bigTitle {
+  font-size: 72px;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.subText {
+  font-size: 18px;
+  opacity: 0.8;
+  margin-top: 14px;
+}
+
+.block {
+  padding: 120px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealAnim 0.9s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 10% cover 30%;
+}
+
+@keyframes revealAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* HERO INTRO (bottom-center -> left fixed feel) */
+.heroIntro {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 80px;
+  background: transparent;
+}
+
+.heroIntroInner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -1px;
+  font-size: 54px;
+  line-height: 0.95;
+}
+
+.heroWord {
+  opacity: 0;
+}
